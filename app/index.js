@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from "react-native";
-import { Link } from "expo-router";
+import { Link, Stack } from "expo-router";
 
 export default function Page() {
   const users = [
