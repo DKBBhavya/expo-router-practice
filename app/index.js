@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, Button } from "react-native";
-import { Link, Stack, useRouter } from "expo-router";
+import { Link, Redirect, Stack, useRouter } from "expo-router";
 
 export default function Page() {
   const router = useRouter();
@@ -15,40 +15,45 @@ export default function Page() {
     },
   ];
 
-  return (
-    <View style={styles.container}>
-      <View style={styles.main}>
-        <Text style={styles.title}>Hello World</Text>
-        <Text style={styles.subtitle}>This is the first page of your app.</Text>
+  return <Redirect href={"/home"} />;
+  // <View style={styles.container}>
+  //   <View style={styles.main}>
+  //     <Text style={styles.title}>Hello World</Text>
+  //     <Text style={styles.subtitle}>This is the first page of your app.</Text>
 
-        {users.map((user) => (
-          <Link
-            key={user.username}
-            href={`/${user.username}`}
-            style={styles.link}
-          >
-            Open profile {user.name}
-          </Link>
-        ))}
+  //     {users.map((user) => (
+  //       <Link
+  //         key={user.username}
+  //         href={`/${user.username}`}
+  //         style={styles.link}
+  //       >
+  //         Open profile {user.name}
+  //       </Link>
+  //     ))}
 
-        <Link
-          href={{
-            pathname: "/DKBBhavya",
-            params: { name: "Bhavya", surname: "Agarwal" },
-          }}
-          style={styles.link}
-        >
-          Open profile
-        </Link>
+  //     <Link
+  //       href={{
+  //         pathname: "/DKBBhavya",
+  //         params: { name: "Bhavya", surname: "Agarwal" },
+  //       }}
+  //       style={styles.link}
+  //     >
+  //       Open profile
+  //     </Link>
 
-        <Link href="/John?name=John" style={styles.link}>
-          Open profile 2
-        </Link>
+  //     <Link href="/John?name=John" style={styles.link}>
+  //       Open profile 2
+  //     </Link>
 
-        <Button onPress={() => router.push("/modal")} title="Open Modal" />
-      </View>
-    </View>
-  );
+  //     <Button onPress={() => router.push("/modal")} title="Open Modal" />
+
+  //     <Link href="/home/feed" style={styles.link}>
+  //       {" "}
+  //       Open Feed{" "}
+  //     </Link>
+  //   </View>
+  // </View>
+  // );
 }
 
 const styles = StyleSheet.create({
