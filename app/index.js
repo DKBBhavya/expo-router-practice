@@ -1,7 +1,8 @@
-import { StyleSheet, Text, View } from "react-native";
-import { Link, Stack } from "expo-router";
+import { StyleSheet, Text, View, Button } from "react-native";
+import { Link, Stack, useRouter } from "expo-router";
 
 export default function Page() {
+  const router = useRouter();
   const users = [
     {
       name: "Bhavya",
@@ -43,6 +44,8 @@ export default function Page() {
         <Link href="/John?name=John" style={styles.link}>
           Open profile 2
         </Link>
+
+        <Button onPress={() => router.push("/modal")} title="Open Modal" />
       </View>
     </View>
   );

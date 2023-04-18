@@ -12,6 +12,7 @@ export default () => {
       }}
     >
       <Stack.Screen name="index" options={{ title: "Home" }} />
+      <Stack.Screen name="modal" options={{ presentation: "modal" }} />
     </Stack>
   );
 };
