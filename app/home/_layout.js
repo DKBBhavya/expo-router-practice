@@ -3,7 +3,7 @@ import { FontAwesome } from "@expo/vector-icons";
 
 export default () => {
   return (
-    <Tabs>
+    <Tabs screenOptions={{ headerShown: false }}>
       <Tabs.Screen
         name="feed"
         options={{
@@ -21,7 +21,7 @@ export default () => {
         }}
       />
       <Tabs.Screen
-        name="Messages"
+        name="messages"
         options={{
           tabBarIcon: ({ color }) => (
             <FontAwesome name="envelope" size={24} color={color} />
